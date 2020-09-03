@@ -121,8 +121,9 @@ else if (usesLower == true && usesUpper == true && usesSpecial == true && usesNu
   }
   
     for(var i = 0; i < pwLength; i ++){
-    pw += choices.charAt(Math.floor(Math.random()* choices.length +1))
+    pw += choices.charAt(Math.floor(Math.random()* choices.length))
       console.log(pw)
+      console.log(i)
 
 
      }
