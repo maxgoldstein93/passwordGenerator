@@ -1,33 +1,37 @@
 // Assignment Code
-// var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-//   passwordText.value = password;
+  passwordText.value = password;
 
-// }
+}
 
 // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
 
-// function generatePassword() {
-  // var pw = " ";
+function generatePassword() {
+  var pw = "";
 
-  var nums =["123456789"];
-  var lowerChar = ["abcdefghijklmnopqrstuvwxyz"];
-  var upperChar = ["ABCDEFGHIJKLMNOP"];
-  var specialChar = [" !#$%&'()*+,-./:;<=>?@[]\^_`{|}~"]
+  var nums ="123456789";
+  var lowerChar = "abcdefghijklmnopqrstuvwxyz";
+  var upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXZY";
+  var specialChar = "!#$%&'()*+,-./:;<=>?@[]\^_`{|}~"
   var choices = " ";
 
 
 
 var pwLength = parseInt(prompt("How many characters would you like your password to be? Choose between 8 and 128"));
 console.log(pwLength)
-//  if(pwLength < 8 || pwLength >129){ var pwLength = parseInt(prompt("How many characters would you like your password to be? Choose between 8 and 128"));
-//  console.log(pwLength)}   NEED TO FIGURE OUT
+ if(pwLength < 8 || pwLength >=129){ alert("Please choose length between 8 and 128");
+
+ var pwLength = parseInt(prompt("How many characters would you like your password to be? Choose between 8 and 128"));}
+ else{}
+
+ 
 
 var usesLower = confirm("Click OK to confirm lower case characters");
 console.log(usesLower)
@@ -48,77 +52,82 @@ if (usesLower == false && usesUpper == false && usesSpecial == false && usesNum 
 
 //                              If all 4 cases are positive
 else if (usesLower == true && usesUpper == true && usesSpecial == true && usesNum == true) {
-  console.log(choices = nums.concat(lowerChar, upperChar, specialChar));
+  choices = nums + lowerChar + upperChar + specialChar
+  console.log(choices);
 }
 
 
 
-  //                              If all 4 cases have 3 positive
+  //                              If all 4 cases have 3 truths
 
   else if ( usesUpper == true && usesSpecial == true && usesNum == true) {
-    console.log(choices = nums.concat(upperChar, specialChar));
+    choices = nums + upperChar + specialChar
+  console.log(choices);
   }
-  else if (usesLower == true && usesUpper == false && usesSpecial == true && usesNum == true) {
-    console.log(choices = nums.concat(lowerChar, specialChar));
+  else if (usesLower == true &&  usesSpecial == true && usesNum == true) {
+    choices = lowerChar + nums + specialChar
+  console.log(choices);
   }
-  else if (usesLower == true && usesUpper == true && usesSpecial == false && usesNum == true) {
-    console.log(choices = nums.concat(lowerChar, upperChar));
+  else if (usesLower == true && usesUpper == true &&  usesNum == true) {
+    choices = lowerChar + upperChar + nums
+  console.log(choices);
   }
-  else if (usesLower == true && usesUpper == true && usesSpecial == true && usesNum == false) {
-    console.log(choices = lowerChar.concat(upperChar, specialChar));
+  else if (usesLower == true && usesUpper == true && usesSpecial == true) {
+    choices = lowerChar + upperChar + specialChar
+  console.log(choices);
   }
 
   //                                  if 2 cases are positive
-  else if (usesLower == true && usesUpper == true && usesSpecial == false && usesNum == false) {
-    console.log(choices = lowerChar.concat(upperChar));
+  else if (usesLower == true && usesUpper == true) {
+    choices = lowerChar + upperChar 
+  console.log(choices);
   }
-  else if (usesLower == false && usesUpper == true && usesSpecial == true && usesNum == false) {
-    console.log(choices = upperChar.concat( specialChar));
+  else if (usesUpper == true && usesSpecial == true) {
+    choices =upperChar + specialChar
+  console.log(choices);
   }
-  else if (usesLower == false && usesUpper == true && usesSpecial == false && usesNum == true) {
-    console.log(choices = nums.concat(upperChar));
+  else if (usesUpper == true && usesNum == true) {
+    choices =upperChar + nums
+  console.log(choices);
   }
-  else if (usesLower == true && usesUpper == false && usesSpecial == true && usesNum == false) {
-    console.log(choices = lowerChar.concat(specialChar));
+  else if (usesLower == true && usesSpecial == true) {
+    choices = lowerChar + specialChar
+  console.log(choices);
   }
-  else if (usesLower == true && usesUpper == false && usesSpecial == false && usesNum == true) {
-    console.log(choices = nums.concat(lowerChar));
+  else if (usesLower == true && usesNum == true) {
+    choices = lowerChar + nums 
+  console.log(choices);
   }
-  else if (usesLower == false && usesUpper == false && usesSpecial == true && usesNum == true) {
-    console.log(choices = nums.concat(specialChar));
+  else if (usesSpecial == true && usesNum == true) {
+    choices = nums + specialChar
+  console.log(choices);
   }
   //                      if one case is positive
-  else if(usesLower== true){(console.log( choices= lowerChar));
+  else if(usesLower== true){
+    choices = lowerChar
+    console.log(choices);
   }
-  else if(usesUpper== true){(console.log( choices= upperChar));
+  else if(usesUpper== true){
+    choices = upperChar
+    console.log(choices);
   }
-  else if(usesSpecial== true){(console.log( choices= specialChar));
+  else if(usesSpecial== true){
+  choices = specialChar
+  console.log(choices);
   }
-  else if(usesNum== true){(console.log( choices= nums));
+  else if(usesNum== true){
+    choices = nums
+    console.log(choices);
   }
   
-  
-  
-
-    // for(var i = 0; i < pwLength.length; i ++){
-    // console.log(pw = pw + choices.charAt(Math.floor(Math.random()* Math.floor(choices.length -1))))
+    for(var i = 0; i < pwLength; i ++){
+    pw += choices.charAt(Math.floor(Math.random()* choices.length +1))
+      console.log(pw)
 
 
-    //  }
+     }
+     return pw
+ 
 
 
-
-
-
-
-
-
-
-
-
-
-
-//    return pw
-
-
-  // }
+  }
