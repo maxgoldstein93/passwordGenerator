@@ -14,8 +14,8 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
+  // Variables
   var pw = "";
-
   var nums ="123456789";
   var lowerChar = "abcdefghijklmnopqrstuvwxyz";
   var upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXZY";
@@ -23,6 +23,7 @@ function generatePassword() {
   var choices = " ";
 
 
+                      // Prompt for password character
 
 var pwLength = parseInt(prompt("How many characters would you like your password to be? Choose between 8 and 128"));
 console.log(pwLength)
@@ -30,9 +31,7 @@ console.log(pwLength)
 
  var pwLength = parseInt(prompt("How many characters would you like your password to be? Choose between 8 and 128"));}
  else{}
-
- 
-
+                        // Confirms for password attributes
 var usesLower = confirm("Click OK to confirm lower case characters");
 console.log(usesLower)
 
@@ -44,13 +43,13 @@ console.log(usesSpecial)
 
 var usesNum = confirm("Click OK to confirm numeric characters");
 console.log(usesNum)
-//                           if all 4 answers are negative
+//                           if all 4 confirms are false
 if (usesLower == false && usesUpper == false && usesSpecial == false && usesNum == false) {
   alert("Must select at least one character type");
 }
 
 
-//                              If all 4 cases are positive
+//                              If all 4 confirms are fasle
 else if (usesLower == true && usesUpper == true && usesSpecial == true && usesNum == true) {
   choices = nums + lowerChar + upperChar + specialChar
   console.log(choices);
@@ -77,7 +76,7 @@ else if (usesLower == true && usesUpper == true && usesSpecial == true && usesNu
   console.log(choices);
   }
 
-  //                                  if 2 cases are positive
+  //                                  if 2 cases are true
   else if (usesLower == true && usesUpper == true) {
     choices = lowerChar + upperChar 
   console.log(choices);
@@ -102,7 +101,7 @@ else if (usesLower == true && usesUpper == true && usesSpecial == true && usesNu
     choices = nums + specialChar
   console.log(choices);
   }
-  //                      if one case is positive
+  //                      if one case is true
   else if(usesLower== true){
     choices = lowerChar
     console.log(choices);
@@ -119,7 +118,7 @@ else if (usesLower == true && usesUpper == true && usesSpecial == true && usesNu
     choices = nums
     console.log(choices);
   }
-  
+              // Password  generator loop
     for(var i = 0; i < pwLength; i ++){
     pw += choices.charAt(Math.floor(Math.random()* choices.length))
       console.log(pw)
